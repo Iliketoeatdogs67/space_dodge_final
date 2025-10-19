@@ -1,2 +1,2 @@
-# project01_space_dodge
+# space_dodge_final
 First class project to play a spce dodge game

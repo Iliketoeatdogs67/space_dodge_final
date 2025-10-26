@@ -1,9 +1,15 @@
 import pygame
 import time
 import random
-pygame.font.init()
+import tkinter as tk
 
-WIDTH, HEIGHT = 1000, 800
+pygame.font.init()
+root = tk.Tk()
+
+# Set game window size as screen size
+screenWidth = root.winfo_screenwidth()
+screenHeight = root.winfo_screenheight()
+WIDTH, HEIGHT = screenWidth, screenHeight
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Space Dodge")
 # Define background color (RGB format, e.g., light blue)
@@ -16,12 +22,12 @@ pygame.display.set_caption("Space Dodge")
 
 BG = pygame.transform.scale(pygame.image.load("./resources/bg.jpeg"), (WIDTH, HEIGHT))
 
-PLAYER_WIDTH = 40
-PLAYER_HEIGHT = 60
+PLAYER_WIDTH = int(screenWidth * 0.04)
+PLAYER_HEIGHT = int(screenWidth * 0.06)
 craft = pygame.transform.scale(pygame.image.load("./resources/crafts.jpg"), (PLAYER_WIDTH,PLAYER_HEIGHT))
 PLAYER_VEL = 5
-STAR_WIDTH = 10
-STAR_HEIGHT = 20
+STAR_WIDTH = int(screenHeight * 0.02)
+STAR_HEIGHT = int(screenHeight * 0.04)
 star_image = pygame.transform.scale(pygame.image.load("./resources/star.jpg"), (STAR_WIDTH,STAR_HEIGHT))
 STAR_VEL = 3
 
